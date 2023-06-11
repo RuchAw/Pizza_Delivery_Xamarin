@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pizza.PizzaDetailsPage"
+             BackgroundImageSource="pizza_add_bg">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout BackgroundColor="#fff" Opacity="0.9" >
+                <Label x:Name="pizzaId" IsVisible="false" Text="{Binding Id}"/>
+                <Label x:Name="pSize" IsVisible="false" Text="{Binding Size}"/>
+                <Label Text="Modify your pizza" HorizontalOptions="Center" FontSize="Large" />
+                <StackLayout Margin="20,50,20,20" Spacing="5">
+                    <Label Text="Pick a pizza" FontSize="Medium" />
+                    <Picker x:Name="PizzaName" SelectedIndexChanged="PizzaName_SelectedIndexChanged" SelectedItem="{Binding Name}">
+                        <Picker.Items>
+                            <x:String>Pizza Margarita</x:String>
+                            <x:String>Pizza 4 fromage</x:String>
+                            <x:String>Pizza Viande Hachée</x:String>
+                            <x:String>Pizza au poulet</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    
+                </StackLayout>
+                <StackLayout Margin="20,0,20,20" Spacing="5">
+                    <Entry x:Name="villeEntry" Text="{Binding Ville}" Placeholder="Ville" />
+                </StackLayout>
+                <StackLayout Margin="20,0,20,20" Spacing="5">
+                    <Entry x:Name="adresseEntry" Text="{Binding Adresse}" Placeholder="Adresse" />
+                </StackLayout>
+                <StackLayout Margin="20,0,20,20" Spacing="5">
+                    <Entry x:Name="numeroEntry" Text="{Binding Numero}" Placeholder="Numero de telephon" />
+                </StackLayout>
+                <StackLayout Margin="0,0,20,20" Spacing="20">
+                    <Label Text="Select a size for your pizza" FontSize="Medium"  HorizontalOptions="Center" />
+                    <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="Center">
+                        <Label Text="Small" FontSize="Medium"/>
+                        <RadioButton GroupName="sizeEntry" x:Name="Small" CheckedChanged="Small_CheckedChanged" IsChecked="True"/>
+                        <Label Text="Medium" FontSize="Medium"/>
+                        <RadioButton GroupName="sizeEntry" x:Name="Medium" CheckedChanged="Medium_CheckedChanged"/>
+                        <Label Text="Large" FontSize="Medium"/>
+                        <RadioButton GroupName="sizeEntry" x:Name="Large" CheckedChanged="Large_CheckedChanged"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout HorizontalOptions="Center" >
+                    <Button Text="Modify Pizza" Clicked="OnModifyPizzaClicked" BackgroundColor="LightBlue"/>
+                </StackLayout>
+
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

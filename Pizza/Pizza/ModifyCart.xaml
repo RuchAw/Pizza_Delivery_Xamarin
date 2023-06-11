@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pizza.ModifyCart"
+             BackgroundImageSource="pizza_list_bg">
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="RowSpacing" Value="1" />
+            <Setter Property="ColumnSpacing" Value="1" />
+            <Setter Property="HeightRequest" Value="80" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#fff" Opacity="0.95" >
+            <Label Text="Modify your cart" HorizontalOptions="Center" FontSize="Large"/>
+            <CollectionView x:Name="pizzasListView">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+
+                            <BoxView Grid.ColumnSpan="7"
+                                 BackgroundColor="Gray"
+                                 HeightRequest="1"
+                                 VerticalOptions="End" />
+
+                            <Image Source="{Binding Image}" Grid.Column="0" HeightRequest="50" WidthRequest="50"/>
+                            <Label Text="{Binding Name}" Grid.Column="1" FontSize="Micro" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            <Label Text="{Binding Size}" Grid.Column="2" FontSize="Micro" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+                            <Label Text="{Binding Ville}" Grid.Column="3" FontSize="Micro" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            <Label Text="{Binding Adresse}" Grid.Column="4" FontSize="Micro" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            <Label Text="{Binding Numero}" Grid.Column="5" FontSize="Micro" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            <CheckBox x:Name="MyCheckbox" CheckedChanged="Checkbox_CheckedChanged" Grid.Column="7"  />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <StackLayout HorizontalOptions="Center" Margin="20">
+                <Button Text="Supprimer" Clicked="DeletePizzas" BackgroundColor="OrangeRed" CornerRadius="10" />
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

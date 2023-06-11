@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pizza.MainPage"
+             BackgroundImageSource="pizza_background.jpg">
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
+        <Button x:Name="AddToCart" Text="Ajouter au panier" Clicked="AddToCart_Clicked" CornerRadius="10" />
+        <Button x:Name="CartList" Text="Liste des commandes" Clicked="ListerButton_Clicked" CornerRadius="10" />
+        <Button x:Name="ModifyCart" Text="Modifier le panier" Clicked="ModifyCart_Clicked" CornerRadius="10" />
+        <Button x:Name="DeleteCart" Text="Supprimer le panier" Clicked="DeleteCart_Clicked" CornerRadius="10" />
+    </StackLayout>
+</ContentPage>
